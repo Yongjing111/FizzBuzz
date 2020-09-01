@@ -1,0 +1,38 @@
+consonant = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z']
+done = 'no'
+new_word_ar = []
+new_word_full = []
+count = 0
+str1 = ''
+
+word = input("Please input a word: ")
+word_ar = list(word)
+word_count = len(word_ar)
+
+while count < word_count:
+    if word_ar[count] in consonant:
+        new_word_ar = []
+        new_word_ar.extend([word_ar[count],'o',word_ar[count]])
+        word_join = ''.join(new_word_ar)
+        new_word_full.append(word_join)
+
+    elif word_ar[count] not in consonant:
+        new_word_full.append(word_ar[count])
+
+    if word_ar[count] in consonant:
+        if count < word_count-1:
+            if word_ar[count+1] in consonant and word_ar[count] in consonant:
+                new_word_full.pop()
+                str1 = word_ar[count] + word_ar[count + 1]
+                word_join = (str1 +'o'+str1)
+                new_word_full.append(word_join)
+                count = count + 1
+        if word_ar[-1] in consonant and  word_ar[-2] in consonant and count == word_count - 2:
+            str1 = word_ar[-2] + word_ar[-1]
+            word_join = (str1 +'o'+str1)
+            new_word_full.append(word_join)
+
+    count = count + 1
+
+final_word = ''.join(new_word_full)
+print("Your new word is:",final_word)
