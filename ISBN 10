@@ -1,0 +1,15 @@
+final_number = 0
+number = 0
+number_ar = ['10','9','8','7','6','5','4','3','2']
+
+for i in range (0,10):
+    number = int(input("Please input the first number in the code starting from the left. "))
+    if i==9:
+        check_number = 11 - final_number%11
+        if check_number == number:
+            print("The code is valid")
+        else: 
+            print("The code is not valid")
+    if i < 9:
+        number_int = int(number_ar[i])
+        final_number = number * number_int + final_number
