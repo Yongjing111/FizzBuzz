@@ -1,0 +1,25 @@
+bin_final_ar = []
+bin_ar = []
+number_int = input("Please input your number:")
+number_str = str(number_int)
+number_length = list(number_str)
+
+
+for i in range (0,len(number_length)):
+    bin_int = int(number_length[i])
+    bin_1 = bin(bin_int)
+
+    bin_ar = list(bin_1)
+    bin_ar.remove('b')
+
+    while len(bin_ar) < 4:
+        bin_ar.insert(0,'0')
+
+    while len(bin_ar) > 4:
+        del bin_ar[0]
+
+    bin_join = ''.join(bin_ar)
+    
+    bin_final_ar.append(bin_join)
+    bin_final_str = ' '.join(bin_final_ar)
+    print(bin_final_str)
