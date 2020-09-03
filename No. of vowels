@@ -1,0 +1,14 @@
+vowel = ['a','e','i','o','u']
+count = 0
+
+word = input("Pleae input a word:")
+word_ar = list(word)
+
+for i in range (0,len(word_ar)):
+    for f in range (0,5):
+        if vowel[f] in word_ar[i]:
+            count = count + 1
+        else:
+            count = count + 0
+
+print(count)
