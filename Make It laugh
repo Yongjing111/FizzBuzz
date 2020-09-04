@@ -1,0 +1,15 @@
+vowel = ['a','e','i','o','u']
+count = 0
+
+word = input("Pleae input a word:")
+word_ar = list(word)
+
+for i in range (0,len(word_ar)):
+    for f in range (0,5):
+        if vowel[f] in word_ar[i]:
+            word_ar.pop(i) 
+            word_ar.insert(i,'haha')
+            
+
+vowel_final = ''.join(word_ar)
+print(vowel_final)
