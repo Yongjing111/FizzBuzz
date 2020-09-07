@@ -1,0 +1,19 @@
+start = ['0','1','1']
+n_num = 0
+
+rep = int(input("How many digits of the Fibonacci sequence would you like? "))
+
+if rep <3:
+    for f in range (0,3-rep):
+        del start[-1]
+    
+elif rep >=3:
+    for i in range (2,rep-1):
+        num_1 = int(start[i])
+        num_2 = int(start[i-1])
+        n_num = num_1 + num_2
+        n_num_str = str(n_num)
+        start.append(n_num_str)
+    
+fib_seq = ', '.join (start)
+print(fib_seq)
