@@ -1,0 +1,14 @@
+string = input("Please input the string: ")
+rev_str_ar = []
+string_ar = []
+
+def change(string):
+    string_ar = list(string)
+    for i in range (len(string_ar)-1,-1,-1):
+        string_in = string[i]
+        rev_str_ar.append(string_in)
+    string = ''.join(rev_str_ar)
+    return string
+
+rev_str = change(string)
+print(rev_str)
