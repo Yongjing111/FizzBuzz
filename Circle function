@@ -1,0 +1,30 @@
+import math
+
+circumference = 0
+area = 0
+circ_ans = 0
+area_ans = 0
+check_circ = ''
+check_area = ''
+
+def changer_1(area):
+    print(radius)
+    area = pow(radius,2)*math.pi
+    return area
+
+def changer(circumference):
+    print(radius)
+    circumference = (radius*2)*math.pi
+    return circumference
+
+radius = int(input("Please input the radius of the circle: "))
+
+check_circ = input("Do you want to know the circumference: ")
+check_area = input("Do you want to know the area: ")
+print(' ')
+if check_circ == 'y':
+    circ_ans = changer(circumference)
+    print("The circumference is", circ_ans)
+if check_area == 'y':
+    area_ans = changer_1(area)
+    print("The area is", area_ans)
