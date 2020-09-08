@@ -1,0 +1,59 @@
+import random
+
+lives = int(input("How many lives do you want? "))
+
+number_int = random.randint(0,127)
+
+num_2_bin = (bin(number_int))
+bin_ar = list(num_2_bin)
+if 'b' in bin_ar:
+    bin_ar.remove('b')
+
+while len(bin_ar) < 8:
+    bin_ar.insert(0,'0')
+while len(bin_ar) > 8:
+    del bin_ar[0]
+
+for i in range (0,len(bin_ar)):
+    if bin_ar[i] == '0':
+        bin_ar.pop(i)
+        bin_ar.insert(i,'1')
+    elif bin_ar[i] == '1':
+        bin_ar.pop(i)
+        bin_ar.insert(i,'0')
+
+bin_str = ''.join(bin_ar)
+bin_int=int(bin_str,2)
+bin_int = bin_int + 1
+
+bin_2 = (bin(bin_int))
+bin_ar_2 = list(bin_2)
+if 'b' in bin_ar_2:
+    bin_ar_2.remove('b')
+
+while len(bin_ar_2) < 8:
+    bin_ar_2.insert(0,'0')
+while len(bin_ar_2) > 8:
+    del bin_ar_2[0]
+
+bin_final = ''.join(bin_ar_2)
+
+print("Convert",number_int,"in binary and then use Two's compliment to find the negative binary code.")
+answer = int(input("Give your answer:"))
+answer_str = str(answer)
+
+while True:
+
+    if answer_str == bin_final:
+        print("Great, you got the answer.")
+        break
+    else:
+        lives = lives - 1
+        if lives == 0:
+            print(" ")
+            print("You have run out of lives")
+            break
+        print(' ')
+        print("You have", lives,"lives left")
+        answer = int(input("You got the answer wrong, try again."))
+        answer_str = str(answer)
