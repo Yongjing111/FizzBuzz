@@ -1,0 +1,7 @@
+number = int(input("Please input a number: "))
+
+if number%3 != 0:
+    print("The number is not divisable by 3.")
+    
+else: 
+    print("The number is divisable by 3.")
