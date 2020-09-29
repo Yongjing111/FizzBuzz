@@ -1,0 +1,10 @@
+num_ar = []
+
+reps = int(input("Input the number of numbers to calculate: "))
+
+for i in range (0, reps):
+    num = int(input("Input a number: "))
+    num_ar.append(num)
+    
+print("First digit: ",num_ar[0])
+print("Last digit: ",num_ar[-1])
