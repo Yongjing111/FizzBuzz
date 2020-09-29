@@ -1,0 +1,8 @@
+import turtle
+import random
+turtle.pendown()
+turtle.speed(0)
+for i in range (0, 10000):
+    turtle.forward(100)
+    angle = random.randint(0,360)
+    turtle.right(angle)
