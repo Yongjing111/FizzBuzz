@@ -1,0 +1,6 @@
+letter = input("Please input a letter: ")
+
+if len(letter) != 1:
+    print("The letter that you input is not a char. ")
+else: 
+    print("The letter that you input is a char. ")
