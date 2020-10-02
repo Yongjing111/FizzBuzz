@@ -1,0 +1,102 @@
+out = 0
+def nand_gate(out):
+    if input_1_sep == 0:
+        if input_2_sep == 0:
+            output = 1
+        elif input_2_sep == 1:
+            output = 1
+    elif input_1_sep == 1:
+        if input_2_sep == 0:
+            output = 1
+        elif input_2_sep == 1:
+            output = 0
+    else:
+        while True:
+            print("The data you input is incorrect. ")
+            break
+    out = output
+    return out
+
+check = int(input("Are you gong to input 1 value or 2: "))
+
+if check == 2:
+    input_1 = int(input("Please input a 0 or a 1 for your first value: "))
+    input_2 = int(input("Please input a 0 or a 1 for your second value: "))
+elif check == 1:
+    input_1 = int(input("Please input a 0 or a 1 for your value: "))
+print(" ")
+logic_gate = input("Please input the logic gate that you want converted: ")
+if check == 2:
+    if logic_gate == 'nand':
+        input_1_sep = input_1
+        input_2_sep = input_2
+        ans = nand_gate(out)
+        
+        print("The output is: ", ans)
+    elif logic_gate == 'and':
+        input_1_sep = input_1
+        input_2_sep = input_2
+        step_1 = nand_gate(out)
+        
+        input_1_sep = step_1
+        input_2_sep = step_1
+        ans = nand_gate(out)
+        
+        print("The output is: ", ans)
+    elif logic_gate == 'or':
+        input_1_sep = input_1
+        input_2_sep = input_1
+        step_1 = nand_gate(out)
+        
+        input_1_sep = input_2
+        input_2_sep = input_2
+        step_2 = nand_gate(out)
+        
+        input_1_sep = step_1
+        input_2_sep = step_2
+        ans = nand_gate(out)
+        
+        print("The output is: ", ans)
+    elif logic_gate == 'nor':
+        input_1_sep = input_1
+        input_2_sep = input_1
+        step_1 = nand_gate(out)
+        
+        input_1_sep = input_2
+        input_2_sep = input_2
+        step_2 = nand_gate(out)
+        
+        input_1_sep = step_1
+        input_2_sep = step_2
+        step_3 = nand_gate(out)
+        
+        input_1_sep = step_3
+        input_2_sep = step_3
+        ans = nand_gate(out)
+        
+        print("The output is: ", ans)
+    elif logic_gate == 'xor':
+        input_1_sep = input_1
+        input_2_sep = input_2
+        step_1 = nand_gate(out)
+        
+        input_1_sep = input_1
+        input_2_sep = step_1
+        step_2 = nand_gate(out)
+        
+        input_1_sep = input_2
+        input_2_sep = step_1
+        step_3 = nand_gate(out)
+        
+        input_1_sep = step_2
+        input_2_sep = step_3
+        ans = nand_gate(out)
+        print("The output is: ", ans)
+if check == 1: 
+    if logic_gate == 'not':
+        
+        input_1_sep = input_1
+        input_2_sep = input_1
+        ans = nand_gate(out)
+        
+        print("The output is: ", ans)
