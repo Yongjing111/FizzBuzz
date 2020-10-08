@@ -1,0 +1,103 @@
+map1 = [['.', '.', '.'], ['.', '.','.'], ['.', '.', '.' ,]]
+def fun_map():
+    for r in map1:
+        for c in r:
+            print(c,end = " ")
+        print('')
+    pass
+print("Whenever you input, please input the x-axis number followed by a y-axis number seperated by a comma.")
+
+while True:
+    p_1 = input('Input the position for Player 1: ')
+    p_1_ar = list(p_1)
+    p_1_ar.pop(1)
+    
+    length = (int(p_1_ar[0])-1)
+    width = (int(p_1_ar[-1])-1)
+    if width == 0:
+        width = 2
+    elif width == 2:
+        width = 0
+    
+    while map1[width][length] != '.':
+        print('')
+        print("The other player already used that spot.")
+        p_1 = input('Input the position for Player 1: ')
+        p_1_ar = list(p_1)
+        p_1_ar.pop(1)
+        
+        length = (int(p_1_ar[0])-1)
+        width = (int(p_1_ar[-1])-1)
+        if width == 0:
+            width = 2
+        elif width == 2:
+            width = 0
+    
+    map1[width][length] = 'x'
+    map2 = fun_map()
+    
+    if map1[0] == ['x','x','x'] or map1[1] == ['x','x','x'] or map1[2] == ['x','x','x']:
+        print("Player 1 wins")
+        break
+    elif map1[0][0] == 'x' and map1[1][0] == 'x' and map1[2][0] == 'x':
+        print("Player 1 wins")
+        break
+    elif map1[0][1] == 'x' and map1[1][1] == 'x' and map1[2][1] == 'x':
+        print("Player 1 wins")
+        break
+    elif map1[0][2] == 'x' and map1[1][2] == 'x' and map1[2][2] == 'x':
+        print("Player 1 wins")
+        break
+    elif map1[0][0] == 'x' and map1[1][1] == 'x' and map1[2][2] == 'x':
+        print("Player 1 wins")
+        break
+    elif map1[0][2] == 'x' and map1[1][1] == 'x' and map1[2][0] == 'x':
+        print("Player 1 wins")
+        break
+    
+    p_2 = input('Input the position for Player 2: ')
+    p_2_ar = list(p_2)
+    p_2_ar.pop(1)
+    
+    length = (int(p_2_ar[0])-1)
+    width = (int(p_2_ar[-1])-1)
+    if width == 0:
+        width = 2
+    elif width == 2:
+        width = 0
+    
+    while map1[width][length] != '.':
+        print('')
+        print("The other player already used that spot.")
+        p_2 = input('Input the position for Player 2: ')
+        p_2_ar = list(p_2)
+        p_2_ar.pop(1)
+        
+        length = (int(p_2_ar[0])-1)
+        width = (int(p_2_ar[-1])-1)
+        if width == 0:
+            width = 2
+        elif width == 2:
+            width = 0
+    
+    map1[width][length] = 'o'
+    map2 = fun_map()
+
+    if map1[0] == ['o','o','o'] or map1[1] == ['o','o','o'] or map1[2] == ['o','o','o']:
+        print("Player 2 wins")
+        break
+    elif map1[0][0] == 'o' and map1[1][0] == 'o' and map1[2][0] == 'o':
+        print("Player 2 wins")
+        break
+    elif map1[0][1] == 'o' and map1[1][1] == 'o' and map1[2][1] == 'o':
+        print("Player 2 wins")
+        break
+    elif map1[0][2] == 'o' and map1[1][2] == 'o' and map1[2][2] == 'o':
+        print("Player 2 wins")
+        break
+    elif map1[0][0] == 'o' and map1[1][1] == 'o' and map1[2][2] == 'o':
+        print("Player 2 wins")
+        break
+    elif map1[0][2] == 'o' and map1[1][1] == 'o' and map1[2][0] == 'o':
+        print("Player 2 wins")
+        break
