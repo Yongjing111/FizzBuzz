@@ -1,0 +1,33 @@
+nn = int(input("Please input the width of the board: "))
+mm = int(input("Please input the length of the board: "))
+
+p_1 = []
+for i in range (0,mm):
+    if i%2 == 0:
+        p_1.append(".")
+    elif i%2 == 1:
+        p_1.append("*")
+
+if p_1[-1] == '*'and p_1[0] == '.':
+    for i in range (0,nn):
+        print(p_1)
+        p_1.reverse()
+#if the number is an odd number
+elif p_1[-1] == '.' and p_1[0] == '.' or p_1[-1] == '*' and p_1[0] == '*':
+    print(p_1)
+    for j in range (0,nn-1):
+        if j%2 == 0:
+            for i in range (0,mm):
+                p_1.pop(i)
+                if i%2 == 0:
+                    p_1.insert(i,'*')
+                elif i%2 == 1:
+                    p_1.insert(i,'.')
+        if j%2 == 1:
+            for i in range (0,mm):
+                p_1.pop(i)
+                if i%2 == 0:
+                    p_1.insert(i,'.')
+                elif i%2 == 1:
+                    p_1.insert(i,'*')
+        print(p_1)
