@@ -1,0 +1,15 @@
+neat_num = []
+num_tot = 0
+for i in range (101,1001):
+    number = i
+
+    number_ar = [int(x) for x in str(number)]
+    
+    for j in range (0,len(number_ar)):
+        num_tot = num_tot + number_ar[j]
+
+    if number%num_tot == 0:
+        neat_num.append(number)
+    num_tot = 0
+
+print(neat_num)
