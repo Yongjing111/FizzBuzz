@@ -1,0 +1,15 @@
+item = input("Input the item to be found: ")
+array = ["hi","hello","greetings"]
+found = 'false'
+count = 0
+
+while count < len(array) and found == 'false':
+    if array[count] == item:
+        found = 'true'
+        print(item,'was found at position',count+1)
+        break
+    else: 
+        count = count + 1
+
+if found == 'false':
+    print("Could not find element in array.")
