@@ -1,0 +1,5 @@
+word = input("Input a word: ")
+word_ar = list(word)
+word_ar.reverse()
+word_fin = ''.join(word_ar)
+print(word_fin)
