@@ -1,0 +1,17 @@
+import random
+array = []
+for i in range (0,9):
+    array.append(random.randint(0,9))
+    
+count = len(array)
+
+while count != 0:
+    for i in range (0,count-1):
+        if array[i] > array[i+1]:
+
+            array.insert(i+2,array[i])
+            array.pop(i)
+            
+    count = count -1
+    
+print(array)
