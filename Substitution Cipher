@@ -1,0 +1,21 @@
+import random
+word_ar = []
+
+reps = random.randint(2,10)
+for i in range (0,reps):
+    number = random.randint(97,122)
+    word_ar.append(chr(number))
+    
+alphabet_1 = ['a','b','c','d','e','f','g','h','i','j','k','l','m']
+alphabet_2 = ['n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+for i in range (0,len(word_ar)):
+    for j in range(0,len(alphabet_1)):
+        if alphabet_1[j] == word_ar[i]:
+            word_ar.pop(i)
+            word_ar.insert(i,alphabet_2[j])
+        elif alphabet_2[j] == word_ar[i]:
+            word_ar.pop(i)
+            word_ar.insert(i,alphabet_1[j])
+            
+print(word_ar)
