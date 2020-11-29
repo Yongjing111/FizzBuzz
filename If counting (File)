@@ -1,0 +1,29 @@
+
+count_if = 0
+count_mam = 0
+
+with open('C:/Users/Yap Yong Jing/Documents/if.txt',"r") as whole_file:
+    for line in whole_file:
+        print (line)
+        if 'If' in line or 'if' in line:
+            count_if = count_if + 1
+
+with open('C:/Users/Yap Yong Jing/Downloads/mam.txt',"r") as whole_file:
+    for line in whole_file:
+
+        if 'If' in line or 'if' in line:
+            count_mam = count_mam + 1
+
+if count_mam > count_if :
+    write = open('C:/Users/Yap Yong Jing/Downloads/mam.txt',"a")
+    write.write("'The mam file has more ifs than the if file. ")
+    
+    write = open('C:/Users/Yap Yong Jing/Documents/if.txt',"a")
+    write.write("'The mam file has more ifs than the if file. ")
+    
+elif count_mam < count_if :
+    write = open('C:/Users/Yap Yong Jing/Downloads/mam.txt',"a")
+    write.write("'The mam file has less ifs than the if file. ")
+    
+    write = open('C:/Users/Yap Yong Jing/Documents/if.txt',"a")
+    write.write("'The mam file has less ifs than the if file. ")
